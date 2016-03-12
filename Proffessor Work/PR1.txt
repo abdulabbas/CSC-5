@@ -1,0 +1,25 @@
+Project 1 07/21/15
+Your project needs to be a minimum of 100 lines.  
+The minimum requirements will only meet a C grade.  
+It should implement one of your favorite games with sufficient logic to be worthy of a programming project.
+It must illustrate all the concepts we have covered, specifically the 7 constructs, primitive data types, formating, file i/o, etc...
+It must also include a writeup. 
+See the attached examples.  
+Naturally, develop in your repository.  
+Place the Project 1 folder inside your projects folder.  
+Again, I want to see the progression of development.  
+This is worth 20% of your grade, equivalent to all your homeworks, so make it look like you spent that kind of time.
+As always, submit the result here, copy yourself on the email, attach the zipped solution folder and send to
+mark.lehr@rcc.edu with subject:
+Lastname, Firstname - Project 1 - 46090
+
+
+
+
+Midterm 07/17/15
+See attached for midterm and see Github for menu.
+As always, follow instructions, submit the result here, copy yourself on the email,
+attach the zipped solution folder and send to
+mark.lehr@rcc.edu with subject:
+Lastname, Firstname - CSC 5 Midterm - 46090
+Do not place in your repository on Github.

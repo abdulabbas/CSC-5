@@ -1,0 +1,144 @@
+MidTerm  CSC5  
+
+Points for each question
+1    15
+2    15
+3    15
+4    20
+5    15
+6    20
+
+Note: Submit the Midterm to my RCC email account mark.lehr@rcc.edu
+with the following subject:  LastName,FirstName - Midterm - Section #.
+
+Submit the solutions/program in a zipped file.
+Do the best you can and turn in as much as you can.  
+Do not post to Github, just an email and in Blackboard.
+You must do all work yourself, no help allowed.  You may
+ask questions to clarify the problem.
+
+Note:  I just want one program for the solution to all the problems 
+that follow. The program should prompt the user for which problem 
+solution to display. Use a do-while and switch construct somewhat
+like the following for the display of the menu and the selection of
+which problem to run.
+
+	int inN;
+        do{
+         Menu();
+         inN=getN();
+         switch(inN){
+          case 1:    problem1();break;
+          case 2:    problem2();break;
+          case 3:    problem3();break;
+          case 4:    problem4();break;
+          case 5:    problem5();break;
+          case 6:    problem6();break;
+          default:   def(inN);}
+        }while(inN<7);
+
+Note:  In addition, I included this menu program if you haven't already
+looked at it.
+
+
+1)  Input the number than make an X in the following way,
+for instance, when you input a 5 you output
+
+5   1
+ 4 2
+  3
+ 4 2
+5   1
+
+when you input a 7 you output
+
+7     1
+ 6   2
+  5 3
+   4
+  5 3
+ 6   2
+7     1
+
+
+Use for-loops, and Flowchart this solution.
+	
+
+
+2)  Read a 4 character number.  Output the result in in the following
+format, input = 9873
+3 ***
+7 *******
+8 ********
+9 *********
+
+If one of the numbers is not a digit, then put a ? mark
+input = 98a3
+3 ***
+a ?
+8 ********
+9 *********
+
+
+3)  We would like to write a check.  Input the following:
+Date, Payee, Amount, and the account holder.  Output these
+in the following format, but the amount needs to be output
+numerically as well as grammatically just like a check.
+Range for the check amount = $1 to $999 (integers, no 
+cents)
+
+Input the following 4 values
+Date:            01/01/15
+Payee:           John Doe
+Amount:          $811
+Account Holder:  Jane Doe
+
+
+Output a written check
+
+Jane Doe
+STREET ADDRESS
+CITY, STATE  ZIP                            Date:  01/01/15
+
+Pay to the Order of:  John Doe              $ 811.00
+
+Eight Hundred Eleven and no/100s Dollars
+
+BANK OF CSC5
+
+FOR:  GOTTA PAY THE RENT	            Jane Doe	
+
+
+
+4) An ISP has 3 different subscription packages
+	a)  $16.85 per month, 5 hours access.  Additional hours
+	    are $0.80 up to 20 hours then $1 for all additional
+	    hours.
+	b)  $23.85 per month, 15 hours access.  Additional hours
+            are $0.65 up to 25 hours then $0.70 for each
+	    hour above this limit.
+	c)  $29.55 per month unlimited access
+Write a program that calculates a customers monthly bill.  Ask which
+package, and how many hours then display the monthly charge.  Also, output
+when customers should transition to another package and what package that
+should be to save the most money.  Calculate the money saved.
+
+
+
+5)  Develop an application that will determine the gross pay for 
+employees. The company pays "straight-time" for the 
+first 20 hours worked, time and a half for all hours worked in 
+excess of 20 hours but less than 40 hours, and double time for any 
+hours worked over 40 hours. Inputs to the program would be hours
+worked and rate of pay.  Output would be gross pay.
+
+
+
+6)  Just another sequence, 
+
+sum = n/x^0 + (n-1)/x^1 + (n-2)/x^2 + (n-3)/x^3 + ............
+
+Input x and the number of terms=n, output the result.
+Note:  x^1 = x,   x^2 = x*x,  x^3 = x*x*x
+
+Flowchart and code this solution.

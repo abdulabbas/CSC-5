@@ -1,0 +1,378 @@
+/* 
+ * File:   main.cpp
+ * Author: AbdulHakim Abbas
+ * Purpose: Final Exam Questions
+ * For CSC 5 
+ * Created on July 30, 2015, 7:05 PM
+ */
+
+//System Libraries
+#include <cstdlib>
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <ctime>
+#include <vector>
+#include <algorithm>
+#include <fstream>
+#include <string>
+using namespace std;
+//User Libraries
+//Global Constants
+//Function Prototypes
+void Menu();
+int getN();
+void def(int);
+void problem1();
+void problem2();
+void problem3();
+void problem4();
+void problem5();
+void problem6();
+//Function Prototypes for problems
+//Problem 3 
+void prtVec(const vector<int>& , int );
+void filVec(vector<int>& , bool );
+//Problem 5
+void read(string a[], int n, ifstream& in, ofstream& out);//To read from file
+void swap(string& a, string& b);//To swap
+void prtAry(string a[],int n,int perLine);//To print the array
+void ordr(string a[],int n);//Sorts
+void LarSml(string a[],int n,int pos);//To find the largest and smallest
+//Problem 6
+void smdTbl(int [][6], int[], int[]);
+void prtTbl(int [][6], int[], int[]);
+//Execution begins here
+int main(int argv,char *argc[]){
+    cout<<"Welcome to this Program which is to answer the Final Exam questions!"<<endl;
+    int inN;
+    do{
+        Menu();
+        inN=getN();
+        switch(inN){
+        case 1: problem1();break;
+        case 2: problem2();break;
+        case 3: problem3();break;
+        case 4: problem4();break;
+        case 5: problem5();break;
+        case 6: problem6();break;
+            default:;
+        };
+    }while(inN<7);
+    return 0;
+}
+//Menu Function
+void Menu(){
+    cout<<"Type 1 for problem 1"<<endl;
+    cout<<"Type 2 for problem 2"<<endl;
+    cout<<"Type 3 for problem 3"<<endl;
+    cout<<"Type 4 for problem 4"<<endl;
+    cout<<"Type 5 for problem 5"<<endl;
+    cout<<"Type 6 for problem 6"<<endl;
+    cout<<"Type 7 to exit \n"<<endl;
+}
+//Choose problem number function
+int getN(){
+    int inN;
+    cin>>inN;
+    return inN;
+}
+//Solution to problem 1
+void problem1(){
+    cout<<"In problem # 1"<<endl<<endl;
+    //Declare Variables
+    unsigned short numb;        //number
+    signed short rvsr=0;        //reverse number
+    int fst=1;                  //one digits number
+    int i=0;
+    int j=1;
+    signed short smd;
+    //Input number
+    cout<<"Input a number and it will output the reverse"<<endl;
+    cin>>numb;
+
+    for(;numb!=0;){
+        //Calculations
+        rvsr=rvsr*10;
+        rvsr=rvsr+numb%10;
+        numb=numb/10;
+        i++;
+    }
+    if(rvsr>32767||rvsr<=0){
+        cout<<"No conversion possible"<<endl;
+    }else{
+        cout<<"Reverse number is: "<<rvsr<<endl;
+    for(;i!=j;){
+        fst=fst*10;
+        fst=fst+1;
+        j++;
+    }
+    smd=rvsr-fst;
+    cout<<"The sum of "<<rvsr<<" - "<<fst<<" is "<<smd<<endl;
+}
+}
+//Solution to problem 2
+void problem2(){
+    cout<<"In problem # 2"<<endl<<endl;
+     srand(time(0));
+   
+    //Declare Variables
+    int total;
+    bool game=false;
+    int size;
+    int guess;                      // User guess is stored in here.
+    int tries=1;                    // Number of tries is stored here.
+    char answer;                    // User answer to question is stored here. 
+
+    do{
+    cout<<"What do you want x to be? x will be the largest number.(1 to 10^x) ";
+    cin>>size;
+    unsigned short tritotal=log2(pow(10,size));
+    int x=tritotal;
+    int y=tritotal;
+    total=pow(10,size);
+    rand()%(total)+1;   
+    int number= rand()%(total)+1;   
+
+        for(int i=1;i<=tritotal;i++){
+                    cout<<"Enter a number between 1 and "<<total<<" you have "<<y<<" tries left): ";
+        cin>>guess;
+        y--;
+
+        if(i>=x){  
+        break; 
+        }
+        if(guess>number){
+        cout<<"Too high! Try again."<<endl;
+          }else if(guess<number){
+              cout << "Too low! Try again."<<endl;
+          }else if(guess=number){
+          cout<<"Congratulations!! "<<endl;
+          cout<<"You got the right number in "<<tries<<" tries!"<<endl;
+          break;
+         }
+
+        tries=i+1;
+        }  
+        if(tries>=x){
+              cout<<"You lose!! you used to many tries"<<endl;
+          break;
+        }
+	cout<<"Would you like to play again? (Y/N)";
+                cin>>answer;
+}while(answer=='Y'||answer=='y');
+	
+}
+//Solution to problem 3
+void problem3(){
+   cout<<"In problem # 3"<<endl<<endl;
+   vector<int> even,odd;
+   int size;
+   int cols;
+   //Input the size of these vectors.
+   cout <<"Enter vector size: ";
+   cin >> size;
+   even.resize(size);
+   odd.resize(size);
+   filVec(even, true);
+   filVec(odd, false);
+   //Output the columns
+   cout<<"How many columns to display: ";
+   cin>>cols;
+   prtVec(even, cols);
+   cout<<endl;
+   prtVec(odd, cols);
+   cout<<endl;
+}
+//Solution to problem 4
+void problem4(){
+    cout<<"In problem # 4"<<endl<<endl;
+        srand(time(0));
+    //Declare Variables
+        const int n=5,ntimes=10000;
+        int freq[n]={0};
+        short int rndseq[]={9,61,88,101,121};
+    
+        for(int i=0;i<ntimes;i++){
+            int number= rand()% 5;   
+            freq[number]+=1;
+        }
+        //Output the results)
+        for(int i=0;i<n;i++){
+        cout<<rndseq[i]<<" occurred "<<
+        freq[i]<<" times"<<endl;
+        }
+
+        
+}
+//Solution to Problem 5
+void problem5(){
+    cout<<"In problem # 5"<<endl<<endl;
+    //Declare Variables
+    ifstream in;
+    ofstream out;
+    int SIZE=10;
+    string array[SIZE];
+    
+    //Opens Files Being Utilized
+    in.open("input.dat");
+    out.open("output.dat");
+    cout<<endl;
+    read(array,SIZE,in,out);
+    prtAry(array,SIZE,1);
+    ordr(array,SIZE);
+    prtAry(array,SIZE,1);
+    
+    //Closes Files Being Utilized
+    in.close();
+    out.close();
+    cout<<endl;
+    //Exit Stage Right
+}
+//Solution to problem 6
+void problem6(){
+    cout<<"In problem # 6"<<endl<<endl;
+      //Declare Variables
+    int array[5][6]={{100, 101, 102, 103, 104, 105},
+                       {106, 107, 108, 109, 110, 111},
+                       {112, 113, 114, 115, 116, 117},
+                       {118, 119, 120, 121, 122, 123},
+                       {124, 125, 126, 127, 128, 129}};
+  
+    int row[5]={0,0,0,0,0};
+    int colm[6]={0,0,0,0,0,0};
+    
+    //Initialize array
+    smdTbl(array, row, colm);
+
+    //Initialize Print Array
+    prtTbl(array, row, colm);
+
+}
+//Exit Comment
+void def(int inN){
+    cout<<"You typed "<<inN<<" to exit the program"<<endl;
+}
+//Problem 3 
+void prtVec(const vector<int>& V, int cols){
+   for(int i=0 ;i<V.size(); i++){
+       cout << V[i] << " ";
+       if( (i+1)%cols == 0) cout << endl;
+   }
+}
+void filVec(vector<int>& V, bool isEven){
+   for(int i=0; i<V.size(); i++){
+   int value =rand()%90+10;
+       if(isEven && value %2==0)
+       V[i] = value;
+       else if(!isEven && value%2!=0)
+       V[i] = value;
+       else
+       i--;
+   }
+}
+//Problem 5 
+void read(string a[], int n, ifstream& in, ofstream& out){
+     for(int i=0;i<10;i++){
+        in>>a[i];
+        out<<a[i];        
+    }
+}
+void ordr(string a[],int n){
+    for(int i=0;i<n-1;i++){
+        LarSml(a,n,i);
+    }
+}
+void LarSml(string a[],int n,int pos){
+    for(int i=pos+1;i<n;i++){
+        if(a[pos]<a[i])swap(a[pos],a[i]);
+    }
+}
+void swap(string& a, string& b){
+    string temp=a;
+    a=b;
+    b=temp;
+}
+void prtAry(string a[],int n,int perLine){
+    cout<<endl;
+    for(int i=0;i<n;i++){
+        cout<<a[i]<<" ";
+        if(i%perLine==(perLine-1))cout<<endl;
+    }
+    cout<<endl;
+}
+//Problem 6
+/*******************************************************************************************************
+ **
+ **           smdTbl
+ ** Purpose: Sum up the numbers in the table
+ ** Input: numArry, rowSum, colmSum
+ ** Output:none
+ *******************************************************************************************************
+ */
+
+void smdTbl(int numArry[][6], int rowSum[], int colmSum[]){
+   for(int i=0;i<6;i++){
+        rowSum[0]+=numArry[0][i];
+        rowSum[1]+=numArry[1][i];
+        rowSum[2]+=numArry[2][i];
+        rowSum[3]+=numArry[3][i];
+        rowSum[4]+=numArry[4][i];
+    }
+    for(int i=0;i<5;i++){
+        colmSum[0]+=numArry[i][0];
+        colmSum[1]+=numArry[i][1];
+        colmSum[2]+=numArry[i][2];
+        colmSum[3]+=numArry[i][3];
+        colmSum[4]+=numArry[i][4];
+        colmSum[5]+=numArry[i][5];
+    } 
+}
+
+
+
+/*******************************************************************************************************
+ **         prtTbl
+ ** Purpose: Print out the results
+ ** Input: numAry, rwSum, colSum
+ ** Output:Original table, rowSum, colmSum, rowTot
+ *******************************************************************************************************
+ */
+
+
+void prtTbl(int numArry[][6], int rowSum[], int colmSum[]){
+    
+    int rowTot=0;
+    for(int i=0;i<=5;i++){
+        cout<<setw(6)<<numArry[0][i]<<" ";
+    }
+    cout<<setw(6)<<rowSum[0]<<endl;
+    
+    for(int i=0;i<=5;i++){
+        cout<<setw(6)<<numArry[1][i]<<" ";
+    }
+    cout<<setw(6)<<rowSum[1]<<endl;
+    
+    for(int i=0;i<=5;i++){
+        cout<<setw(6)<<numArry[2][i]<<" ";
+    }
+    cout<<setw(6)<<rowSum[2]<<endl;
+    
+    for(int i=0;i<=5;i++){
+        cout<<setw(6)<<numArry[3][i]<<" ";
+    }
+    cout<<setw(6)<<rowSum[3]<<endl;
+    
+    for(int i=0;i<=5;i++){
+        cout<<setw(6)<<numArry[4][i]<<" ";
+    }
+    cout<<setw(6)<<rowSum[4]<<endl;
+    
+    for(int i=0;i<6;i++){
+        cout<<setw(6)<<colmSum[i]<<" ";
+    }
+    for(int i=0; i<=5;i++){
+        rowTot+=rowSum[i];
+    }
+    cout<<setw(6)<<rowTot<<endl;
+}

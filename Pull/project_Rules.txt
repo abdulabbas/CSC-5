@@ -1,0 +1,15 @@
+Project 1 had 145 words.
+
+Project 2 has 301 words in total.
+
+The 2nd project will be a modified version of the 1st project. 
+
+It may inclued artwork, and it might read the words from a file and pick a word at random.
+
+It should cover any new or old concepts covered in the CSC5 class of this term.
+
+The write up should be modified to suite this project.
+
+Make a flow chart that can be more useful for any one to be able to understand the flow of this projects code.
+
+Make sure that I have covered what is needed to make the project get a better grade.

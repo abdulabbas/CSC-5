@@ -1,0 +1,4 @@
+cin <<  
+cout >>  
+cin <<  
+cout >>
