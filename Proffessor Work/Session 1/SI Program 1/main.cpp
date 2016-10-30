@@ -1,6 +1,5 @@
 /* 
- * File:   main.cpp
- * Author: Carey, Bradd
+ * File:   main.cpp 
  *
  * Created on June 24, 2014
  * 
